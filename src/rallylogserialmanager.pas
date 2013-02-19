@@ -1,6 +1,3 @@
-
-
-
 unit rallylogserialmanager;
 
 {$mode objfpc}{$H+}
@@ -126,7 +123,7 @@ implementation
              begin
                   bCommand := fStoredInputData[0];
 
-                  // For Sysex string commands
+                  // For Sysex String commands
 		  if (bCommand = CMD_SYSEX_STRING) then
                   begin
                      setLength(message, fSysexBytesRead-1);
@@ -140,11 +137,10 @@ implementation
 			  inc(iStoredInputDataIndex);
 		       end; //while
 
-		     processSysexStringMessage(message);
+		     processSysexStringMessage(message);    // do something with the String Message
                   end // if
 
-                  // Sysex Commands
-                  else
+                  else // Sysex all other types of binary Commands
                   begin
                      iNumOfValues := (fSysexBytesRead-1) div 2;
 		     setLength(values, iNumOfValues);
@@ -162,13 +158,13 @@ implementation
 			iStoredInputDataIndex := iStoredInputDataIndex+2;
 		     end; //while
 
-		     dispatchSysexEvent(TRallyLogEvent.Create(bCommand, values));  // send message to all listeners
+		     dispatchSysexEvent(TRallyLogEvent.Create(bCommand, values));  // send sysex message to all listeners
                   end; //else
                   setLength(fStoredInputData,SYSEX_MAX_DATA_BYTES);
 		  fParsingSysex := false;
 		  fSysexBytesRead := 0;
              end //else if
-        else
+        else // read all bytes after Sysex start into buffer
         begin
            fStoredInputData[fSysexBytesRead] := bData;
 	   inc(fSysexBytesRead);
@@ -184,7 +180,7 @@ implementation
          end  // if
          else
          begin
-            // waste this bytes if not in a sysex parsing
+            // ignore this byte if not in sysex parsing
 	      fSysexBytesRead := 0;
 	 end;
     end; //else
