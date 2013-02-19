@@ -18,7 +18,7 @@ type
       fConnected: boolean;
       fParsingSysex: boolean;
       fSysexBytesRead: integer;
-      fStoredInputData: Array of String;
+      fStoredInputData: TDynByteArray;
 
       function sendSysexMessage(const command: byte ): integer;
       function sendSysexMessage(const command: byte; const values: TDynByteArray): integer;
@@ -28,6 +28,7 @@ type
 
       procedure serialEvent(Sender: TObject);
       procedure processInput();
+      procedure processSysexStringMessage(message: TDynByteArray);
 
     public
       constructor create(); override;
@@ -48,13 +49,14 @@ implementation
   Constructor TCommunicationManager.Create();
   begin
     inherited;
+    setLength(fStoredInputData,1);           // init the array
     fConnected := false;
     fParsingSysex := false;
     fComPort := TSdpoSerial.create(nil);
     with fComPort do
     begin
          BaudRate:=br_57600;   // default baud of FirmataLite Arduino library
-         Device:='COM3';       //TODO: Testing need to select system comport device
+         Device:='COM3';       //TODO: Testing need to select system comport device instead of hard coded
          OnRxData:= @serialEvent;
     end;
   end;   // Create
@@ -93,42 +95,98 @@ implementation
     While (fComPort.DataAvailable) do
     begin
         processInput();
-        fcomport.SynSer.;
     end;
   end; //serialEvent
 
   //process the data received
   procedure TCommunicationManager.processInput();
   var
-    sData : String[1];  // SERIAL DATA
     bData : Byte;
+    bCommand: Byte;
+    message: TDynByteArray;
+    values: TDynByteArray;
+    iMessageIndex : integer;
+    iStoredInputDataIndex: integer;
+    iNumOfValues: integer;
+    iValuesIndex: integer;
+    LSB, MSB: integer;
   begin
-
-    //PSEUDO CODE
-    // SData <- FComport.read
-    // convert sData to bData
-    //
-    //bData := 0;
-
-    sData := fComPort.ReadData;
-
-    if length(sData) = 0 then
-       exit;
-    bData := ord(sData[0]);
+    bData := fComPort.SynSer.RecvByte(0);                      // Read a single byte from the serial port
 
     if (fParsingSysex AND (fSysexBytesRead < SYSEX_MAX_DATA_BYTES)) then
     begin
-        if(bData = CMD_SYSEX_START) then
+        if(bData = CMD_SYSEX_START) then                       // start of sysex command
         begin //if
-          // a new command start
-	  // clear buffer
-	 // fStoredInputData = new int[SYSEX_MAX_DATA_BYTES];
+          // a new start command
+          setLength(fStoredInputData,0);                       // clear the array by deallocating
+          setLength(fStoredInputData,SYSEX_MAX_DATA_BYTES);    // Reset read buffer
 	  fSysexBytesRead := 0;
-        end; //if
+        end //if
+        else if (bData = CMD_SYSEX_END) then                   // end of sysex command
+             begin
+                  bCommand := fStoredInputData[0];
+
+                  // For Sysex string commands
+		  if (bCommand = CMD_SYSEX_STRING) then
+                  begin
+                     setLength(message, fSysexBytesRead-1);
+                     iMessageIndex := 0;
+		     iStoredInputDataIndex := 1;
+
+		       while(iMessageIndex < fSysexBytesRead-1) do
+                       begin
+		          message[iMessageIndex] := fStoredInputData[iStoredInputDataIndex];
+			  inc(iMessageIndex);
+			  inc(iStoredInputDataIndex);
+		       end; //while
+
+		     processSysexStringMessage(message);
+                  end // if
+
+                  // Sysex Commands
+                  else
+                  begin
+                     iNumOfValues := (fSysexBytesRead-1) div 2;
+		     setLength(values, iNumOfValues);
+
+		     iValuesIndex := 0;
+		     iStoredInputDataIndex := 1;
+
+		     while(iValuesIndex < iNumOfValues) do
+                     begin
+			LSB := fStoredInputData[iStoredInputDataIndex];
+			MSB := fStoredInputData[iStoredInputDataIndex+1];
+
+			values[iValuesIndex] := MSB*128+LSB;
+			inc(iValuesIndex);
+			iStoredInputDataIndex := iStoredInputDataIndex+2;
+		     end; //while
+
+		     dispatchSysexEvent(TRallyLogEvent.Create(bCommand, values));  // send message to all listeners
+                  end; //else
+                  setLength(fStoredInputData,SYSEX_MAX_DATA_BYTES);
+		  fParsingSysex := false;
+		  fSysexBytesRead := 0;
+             end //else if
+        else
+        begin
+           fStoredInputData[fSysexBytesRead] := bData;
+	   inc(fSysexBytesRead);
+        end;  //else
     end //if
     else
     begin
-
+         if(bData = CMD_SYSEX_START)then
+         begin
+	      fParsingSysex := true;
+	      setLength(fStoredInputData, SYSEX_MAX_DATA_BYTES);
+	      fSysexBytesRead := 0;
+         end  // if
+         else
+         begin
+            // waste this bytes if not in a sysex parsing
+	      fSysexBytesRead := 0;
+	 end;
     end; //else
   end;
 
@@ -169,6 +227,13 @@ begin
     end;
     Result := S;
 end;
+
+   // print a sysex String Message to Console and Log file
+  procedure TCommunicationManager.processSysexStringMessage(message: TDynByteArray);
+  begin
+     //TODO: print message to console
+     //TODO: prind message to log file
+  end;
 
 end.
 
