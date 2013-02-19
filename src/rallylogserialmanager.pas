@@ -110,21 +110,21 @@ implementation
   begin
     bData := fComPort.SynSer.RecvByte(0);                      // Read a single byte from the serial port
 
-    if (fParsingSysex AND (fSysexBytesRead < SYSEX_MAX_DATA_BYTES)) then
+    if (fParsingSysex AND (fSysexBytesRead < TFirmata.SYSEX_MAX_DATA_BYTES)) then
     begin
-        if(bData = CMD_SYSEX_START) then                       // start of sysex command
+        if(bData = TFirmata.CMD_SYSEX_START) then                       // start of sysex command
         begin //if
           // a new start command
           setLength(fStoredInputData,0);                       // clear the array by deallocating
-          setLength(fStoredInputData,SYSEX_MAX_DATA_BYTES);    // Reset read buffer
+          setLength(fStoredInputData,TFirmata.SYSEX_MAX_DATA_BYTES);    // Reset read buffer
 	  fSysexBytesRead := 0;
         end //if
-        else if (bData = CMD_SYSEX_END) then                   // end of sysex command
+        else if (bData = TFirmata.CMD_SYSEX_END) then                   // end of sysex command
              begin
                   bCommand := fStoredInputData[0];
 
                   // For Sysex String commands
-		  if (bCommand = CMD_SYSEX_STRING) then
+		  if (bCommand = TFirmata.CMD_SYSEX_STRING) then
                   begin
                      setLength(message, fSysexBytesRead-1);
                      iMessageIndex := 0;
@@ -160,7 +160,7 @@ implementation
 
 		     dispatchSysexEvent(TRallyLogEvent.Create(bCommand, values));  // send sysex message to all listeners
                   end; //else
-                  setLength(fStoredInputData,SYSEX_MAX_DATA_BYTES);
+                  setLength(fStoredInputData,TFirmata.SYSEX_MAX_DATA_BYTES);
 		  fParsingSysex := false;
 		  fSysexBytesRead := 0;
              end //else if
@@ -172,10 +172,10 @@ implementation
     end //if
     else
     begin
-         if(bData = CMD_SYSEX_START)then
+         if(bData = TFirmata.CMD_SYSEX_START)then
          begin
 	      fParsingSysex := true;
-	      setLength(fStoredInputData, SYSEX_MAX_DATA_BYTES);
+	      setLength(fStoredInputData, TFirmata.SYSEX_MAX_DATA_BYTES);
 	      fSysexBytesRead := 0;
          end  // if
          else
@@ -189,13 +189,13 @@ implementation
   //Request ID
   procedure TCommunicationManager.requestDeviceId();
   begin
-       sendSysexMessage(CMD_ID_REQUEST);
+       sendSysexMessage(TFirmata.CMD_ID_REQUEST);
   end; //requestDeviceId
 
   //Request Battery
   procedure TCommunicationManager.requestBattery();
   begin
-       sendSysexMessage(CMD_BAT_REQUEST);
+       sendSysexMessage(TFirmata.CMD_BAT_REQUEST);
   end; //requestBattery
 
 // Convert Stribng to Byet

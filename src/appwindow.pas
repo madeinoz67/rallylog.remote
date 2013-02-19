@@ -70,7 +70,7 @@ end;
  begin
       // update controls when we receive a response event
     case event.Command of
-         RSP_REPORT_ID: lblID.Caption:=char(event.Values[0]);      // ID Label
+         TFirmata.RSP_REPORT_ID: lblID.Caption:=char(event.Values[0]);      // ID Label
     end;
  end;
 
