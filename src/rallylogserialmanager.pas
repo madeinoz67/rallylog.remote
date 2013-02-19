@@ -65,13 +65,43 @@ implementation
   end;  // Destroy
 
   function TCommunicationManager.sendSysexMessage(const command:byte): integer;
+  var
+     value: Array[0..0] of Byte;
   begin
-      result := sendSysexMessage(command, nil);
+      result := sendSysexMessage(command, value);
   end;  //SendSysexMEssage
 
   function TCommunicationManager.sendSysexMessage(const command: byte; const values: TDynByteArray): integer;
+  var
+      totalSize: integer;
+      message: TDynByteArray;
+      i: integer;
   begin
-       result := -1;
+       if(fConnected)then
+       begin
+                        totalSize := length(values)+3;
+			setLength(message, totalSize);
+
+			message[0] := TFirmata.CMD_SYSEX_START;
+			message[1] := command;
+
+                        for i:= 2 to length(values)+2 do
+                        begin
+                             message[i] := values[i-2];
+                        end; //for
+
+			message[totalSize-1] := TFirmata.CMD_SYSEX_END;
+
+			try
+                           result := fComPort.WriteBuffer(message, totalSize);
+                        finally
+                        end;  // Try
+	end // If
+        else
+        begin
+             //TODO: logger.warn("Trying to send, but not connected");
+        end; // else
+
   end; //SendSysexMessage
 
   procedure TCommunicationManager.connect();
