@@ -34,6 +34,8 @@ type
       procedure requestDeviceId();
       procedure requestBattery();
 
+      procedure setId(id: byte);
+
       procedure connect();
       procedure disconnect();
 
@@ -66,8 +68,9 @@ implementation
 
   function TCommunicationManager.sendSysexMessage(const command:byte): integer;
   var
-     value: Array[0..0] of Byte;
+     value: TDynByteArray;
   begin
+       setLength(value,1);
       result := sendSysexMessage(command, value);
   end;  //SendSysexMEssage
 
@@ -233,8 +236,18 @@ implementation
   procedure TCommunicationManager.processSysexStringMessage(message: TDynByteArray);
   begin
      //TODO: print message to console
-     //TODO: prind message to log file
+    //TODO: prind message to log file
   end;
+
+  // sets ID
+ procedure TCommunicationManager.setID(id: Byte);
+ var
+   value: TDynByteArray;
+ begin
+      setLength(value, 1);
+      value[0] := id;
+      sendSysexMessage(TFirmata.CMD_ID_SET, value);
+ end;
 
 end.
 

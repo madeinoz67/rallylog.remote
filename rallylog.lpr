@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, appwindow, SynchedThreads, rallylogserialmanager,
+  Forms, pl_excontrols, appwindow, SynchedThreads, rallylogserialmanager,
 rallylogevents, serialdevice, firmata, remoteutils
   { you can add units after this };
 

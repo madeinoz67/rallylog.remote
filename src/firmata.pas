@@ -34,19 +34,17 @@ Type
 
         // Values Parameters
         VAL_ID                   = $00;
-        VAL_BAT                  = $01;
+        VAL_BAT_HI               = $01;
+        VAL_BAT_LO               = $02;
 
-        VAL_RTC_SEC              = $01;
-        VAL_RTC_MIN              = $02;
-        VAL_RTC_HOUR             = $03;
-        VAL_RTC_DAY              = $04;
-        VAL_RTC_MONTH            = $05;
-        VAL_RTC_YEAR             = $06;
-        VAL_RTC_CAL              = $07;
-        VAL_RTC_STATUS           = $08;
-
-
-
+        VAL_RTC_SEC              = $03;
+        VAL_RTC_MIN              = $04;
+        VAL_RTC_HOUR             = $05;
+        VAL_RTC_DAY              = $06;
+        VAL_RTC_MONTH            = $07;
+        VAL_RTC_YEAR             = $08;
+        VAL_RTC_CAL              = $09;
+        VAL_RTC_STATUS           = $0A;
 
   end;
 

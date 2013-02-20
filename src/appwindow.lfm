@@ -1,17 +1,17 @@
 object Form1: TForm1
-  Left = 468
-  Height = 240
-  Top = 306
-  Width = 320
+  Left = 111
+  Height = 193
+  Top = 218
+  Width = 306
   Caption = 'Form1'
-  ClientHeight = 240
-  ClientWidth = 320
+  ClientHeight = 193
+  ClientWidth = 306
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   Position = poDesktopCenter
   LCLVersion = '1.1'
   object Label1: TLabel
-    Left = 24
+    Left = 56
     Height = 15
     Top = 33
     Width = 17
@@ -19,7 +19,7 @@ object Form1: TForm1
     ParentColor = False
   end
   object lblID: TLabel
-    Left = 88
+    Left = 112
     Height = 15
     Top = 33
     Width = 24
@@ -27,15 +27,15 @@ object Form1: TForm1
     ParentColor = False
   end
   object Label2: TLabel
-    Left = 24
+    Left = 56
     Height = 15
     Top = 56
     Width = 40
     Caption = 'Battery:'
     ParentColor = False
   end
-  object Label3: TLabel
-    Left = 88
+  object lblBattery: TLabel
+    Left = 112
     Height = 15
     Top = 56
     Width = 50
@@ -43,28 +43,67 @@ object Form1: TForm1
     ParentColor = False
   end
   object btn_Connect: TButton
-    Left = 24
+    Left = 56
     Height = 36
-    Top = 184
+    Top = 136
     Width = 91
     Caption = 'Connect'
     OnClick = btn_ConnectClick
     TabOrder = 0
   end
   object lblRemoteDate: TLabel
-    Left = 192
+    Left = 152
     Height = 15
-    Top = 127
+    Top = 104
     Width = 78
     Caption = 'lblRemoteDate'
     ParentColor = False
   end
   object lblRemoteTime: TLabel
-    Left = 72
+    Left = 56
     Height = 15
-    Top = 127
+    Top = 104
     Width = 81
+    Alignment = taRightJustify
     Caption = 'lblRemoteTime'
     ParentColor = False
+  end
+  object spineditID: TSpinEdit
+    Left = 176
+    Height = 23
+    Top = 25
+    Width = 50
+    MaxValue = 128
+    MinValue = 1
+    TabOrder = 1
+    Value = 1
+  end
+  object btnSetID: TButton
+    Left = 232
+    Height = 25
+    Top = 23
+    Width = 51
+    Caption = 'Set ID'
+    OnClick = btnSetIDClick
+    TabOrder = 2
+  end
+  object btnBat: TButton
+    Left = 232
+    Height = 25
+    Top = 56
+    Width = 51
+    Caption = 'Get Bat'
+    OnClick = btnBatClick
+    TabOrder = 3
+  end
+  object plLED1: TplLEDIndicator
+    Left = 8
+    Height = 56
+    Hint = 'Battery Voltage'
+    Top = 25
+    Width = 32
+    Position = 0
+    Background = clBlack
+    Foreground = clLime
   end
 end

@@ -4,16 +4,16 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Debug"/>
-    <Units Count="16">
+    <Units Count="18">
       <Unit0>
         <Filename Value="rallylog.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="rallylog"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="8" Y="10"/>
-        <UsageCount Value="197"/>
+        <CursorPos X="23" Y="10"/>
+        <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -23,11 +23,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="appwindow"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="46"/>
-        <CursorPos X="1" Y="79"/>
-        <UsageCount Value="197"/>
+        <TopLine Value="80"/>
+        <CursorPos X="48" Y="110"/>
+        <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -35,56 +36,55 @@
         <Filename Value="src\synchedthreads.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SynchedThreads"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="10"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="28" Y="89"/>
-        <UsageCount Value="197"/>
+        <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="src\rallylogserialmanager.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="rallylogserialmanager"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="195"/>
-        <CursorPos X="24" Y="230"/>
-        <UsageCount Value="197"/>
+        <TopLine Value="199"/>
+        <CursorPos X="1" Y="75"/>
+        <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="src\rallylogevents.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="rallylogevents"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="30"/>
+        <TopLine Value="58"/>
         <CursorPos X="67" Y="54"/>
-        <UsageCount Value="197"/>
+        <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="src\serialdevice.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="serialdevice"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="5" Y="14"/>
-        <UsageCount Value="160"/>
+        <UsageCount Value="164"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="src\firmata.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="firmata"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="11"/>
-        <CursorPos X="39" Y="37"/>
-        <UsageCount Value="160"/>
+        <TopLine Value="9"/>
+        <CursorPos X="1" Y="48"/>
+        <UsageCount Value="164"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -146,24 +146,42 @@
       <Unit14>
         <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\sdposerial.pas"/>
         <UnitName Value="SdpoSerial"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
         <TopLine Value="316"/>
         <CursorPos X="1" Y="340"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit14>
       <Unit15>
         <Filename Value="src\remoteutils.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="remoteutils"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="37" Y="31"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="30"/>
         <Loaded Value="True"/>
       </Unit15>
+      <Unit16>
+        <Filename Value="C:\codetyphon\lazarus\lcl\include\control.inc"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="2696"/>
+        <CursorPos X="1" Y="2719"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="C:\codetyphon\lazarus\lcl\include\buttoncontrol.inc"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="33"/>
+        <CursorPos X="1" Y="56"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit17>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
@@ -171,132 +189,143 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="90" Column="1" TopLine="52"/>
+        <Caret Line="81" Column="1" TopLine="49"/>
       </Position1>
       <Position2>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="93" Column="1" TopLine="55"/>
+        <Caret Line="73" Column="25" TopLine="55"/>
       </Position2>
       <Position3>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="95" Column="1" TopLine="57"/>
+        <Caret Line="232" Column="1" TopLine="208"/>
       </Position3>
       <Position4>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="96" Column="1" TopLine="58"/>
+        <Caret Line="72" Column="1" TopLine="49"/>
       </Position4>
       <Position5>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\sdposerial.pas"/>
-        <Caret Line="339" Column="1" TopLine="316"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="73" Column="1" TopLine="49"/>
       </Position5>
       <Position6>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\sdposerial.pas"/>
-        <Caret Line="340" Column="1" TopLine="316"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="74" Column="1" TopLine="49"/>
       </Position6>
       <Position7>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="105" Column="1" TopLine="83"/>
+        <Caret Line="75" Column="1" TopLine="49"/>
       </Position7>
       <Position8>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="72" Column="1" TopLine="49"/>
+        <Caret Line="232" Column="1" TopLine="208"/>
       </Position8>
       <Position9>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="223" Column="1" TopLine="200"/>
+        <Caret Line="72" Column="1" TopLine="49"/>
       </Position9>
       <Position10>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="51" Column="31" TopLine="35"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="73" Column="1" TopLine="49"/>
       </Position10>
       <Position11>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="70" Column="1" TopLine="47"/>
+        <Caret Line="74" Column="1" TopLine="49"/>
       </Position11>
       <Position12>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="71" Column="1" TopLine="47"/>
+        <Caret Line="82" Column="1" TopLine="49"/>
       </Position12>
       <Position13>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="72" Column="1" TopLine="47"/>
+        <Caret Line="83" Column="1" TopLine="49"/>
       </Position13>
       <Position14>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="223" Column="1" TopLine="200"/>
+        <Caret Line="85" Column="1" TopLine="49"/>
       </Position14>
       <Position15>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="57" Column="1" TopLine="35"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="86" Column="1" TopLine="49"/>
       </Position15>
       <Position16>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="76" Column="79" TopLine="35"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="88" Column="1" TopLine="50"/>
       </Position16>
       <Position17>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="80" Column="44" TopLine="41"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="89" Column="1" TopLine="51"/>
       </Position17>
       <Position18>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="231" Column="1" TopLine="196"/>
+        <Caret Line="91" Column="1" TopLine="53"/>
       </Position18>
       <Position19>
         <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="8" Column="11" TopLine="1"/>
+        <Caret Line="93" Column="1" TopLine="55"/>
       </Position19>
       <Position20>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="79" Column="48" TopLine="41"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="96" Column="1" TopLine="58"/>
       </Position20>
       <Position21>
-        <Filename Value="src\remoteutils.pas"/>
-        <Caret Line="31" Column="37" TopLine="1"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="98" Column="1" TopLine="60"/>
       </Position21>
       <Position22>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="79" Column="48" TopLine="1"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="99" Column="1" TopLine="61"/>
       </Position22>
       <Position23>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="78" Column="13" TopLine="41"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="108" Column="1" TopLine="86"/>
       </Position23>
       <Position24>
         <Filename Value="src\appwindow.pas"/>
-        <Caret Line="79" Column="54" TopLine="41"/>
+        <Caret Line="98" Column="122" TopLine="65"/>
       </Position24>
       <Position25>
         <Filename Value="src\appwindow.pas"/>
-        <Caret Line="80" Column="45" TopLine="41"/>
+        <Caret Line="102" Column="58" TopLine="65"/>
       </Position25>
       <Position26>
-        <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="70" Column="1" TopLine="47"/>
+        <Filename Value="src\appwindow.pas"/>
+        <Caret Line="103" Column="58" TopLine="66"/>
       </Position26>
       <Position27>
         <Filename Value="src\appwindow.pas"/>
-        <Caret Line="80" Column="39" TopLine="41"/>
+        <Caret Line="102" Column="58" TopLine="65"/>
       </Position27>
       <Position28>
         <Filename Value="src\appwindow.pas"/>
-        <Caret Line="79" Column="81" TopLine="41"/>
+        <Caret Line="106" Column="43" TopLine="53"/>
       </Position28>
       <Position29>
         <Filename Value="src\appwindow.pas"/>
-        <Caret Line="84" Column="43" TopLine="45"/>
+        <Caret Line="107" Column="44" TopLine="80"/>
       </Position29>
       <Position30>
         <Filename Value="src\appwindow.pas"/>
-        <Caret Line="79" Column="53" TopLine="46"/>
+        <Caret Line="105" Column="44" TopLine="80"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
-    <Watches Count="1">
+    <BreakPoints Count="2">
       <Item1>
-        <Expression Value="event"/>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="src\rallylogserialmanager.pas"/>
+        <Line Value="247"/>
       </Item1>
-    </Watches>
+      <Item2>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="src\rallylogserialmanager.pas"/>
+        <Line Value="232"/>
+      </Item2>
+    </BreakPoints>
   </Debugging>
   <EditorMacros Count="0"/>
 </CONFIG>
