@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 247
+  Left = 468
   Height = 240
-  Top = 365
+  Top = 306
   Width = 320
   Caption = 'Form1'
   ClientHeight = 240
@@ -50,5 +50,21 @@ object Form1: TForm1
     Caption = 'Connect'
     OnClick = btn_ConnectClick
     TabOrder = 0
+  end
+  object lblRemoteDate: TLabel
+    Left = 192
+    Height = 15
+    Top = 127
+    Width = 78
+    Caption = 'lblRemoteDate'
+    ParentColor = False
+  end
+  object lblRemoteTime: TLabel
+    Left = 72
+    Height = 15
+    Top = 127
+    Width = 81
+    Caption = 'lblRemoteTime'
+    ParentColor = False
   end
 end

@@ -20,8 +20,8 @@ type
       function sendSysexMessage(const command: byte ): integer;
       function sendSysexMessage(const command: byte; const values: TDynByteArray): integer;
 
-      function strtoByte(const Value: String): TDynByteArray;
-      function byteToString(const Value: TDynByteArray): String;
+     // function strtoByte(const Value: String): TDynByteArray;
+     // function byteToString(const Value: TDynByteArray): String;
 
       procedure serialEvent(Sender: TObject);
       procedure processInput();
@@ -189,6 +189,7 @@ implementation
 		     end; //while
 
 		     dispatchSysexEvent(TRallyLogEvent.Create(bCommand, values));  // send sysex message to all listeners
+
                   end; //else
                   setLength(fStoredInputData,TFirmata.SYSEX_MAX_DATA_BYTES);
 		  fParsingSysex := false;
@@ -227,32 +228,6 @@ implementation
   begin
        sendSysexMessage(TFirmata.CMD_BAT_REQUEST);
   end; //requestBattery
-
-// Convert Stribng to Byet
-function TCommunicationManager.strToByte(const Value: String): TDynByteArray;
-var
-    I: integer;
-begin
-    SetLength(Result, Length(Value));
-    for I := 0 to Length(Value) - 1 do
-        Result[I] := ord(Value[I + 1]);// – 48;
-end;
-
-// convert Byte to Srring
-function TCommunicationManager.byteToString(const Value: TDynByteArray): String;
-var
-    I: integer;
-    S : String;
-    letter: char;
-begin
-    S := '';
-    for I := Length(Value)-1 Downto 0 do
-    begin
-        letter := Chr(Value[I]); // + 48);
-        S := letter + S;
-    end;
-    Result := S;
-end;
 
    // print a sysex String Message to Console and Log file
   procedure TCommunicationManager.processSysexStringMessage(message: TDynByteArray);

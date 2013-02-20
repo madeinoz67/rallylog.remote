@@ -69,7 +69,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="8">
       <Unit0>
         <Filename Value="rallylog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -108,6 +108,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="firmata"/>
       </Unit6>
+      <Unit7>
+        <Filename Value="src\remoteutils.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="remoteutils"/>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

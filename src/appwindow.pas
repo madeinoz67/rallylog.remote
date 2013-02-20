@@ -5,7 +5,7 @@ unit appwindow;
 interface
 
 uses
-  firmata, rallylogserialmanager, rallyLogEvents, Classes, SysUtils, FileUtil, Forms,
+  remoteutils, firmata, rallylogserialmanager, rallyLogEvents, Classes, SysUtils, FileUtil, Forms,
   Controls, Graphics, Dialogs, StdCtrls;
 
 type
@@ -16,6 +16,8 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    lblRemoteDate: TLabel;
+    lblRemoteTime: TLabel;
     lblID: TLabel;
     procedure btn_ConnectClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -44,15 +46,16 @@ end;
 
 procedure TForm1.btn_ConnectClick(Sender: TObject);
 begin
-   if(btn_Connect.Caption = 'Connect') then
+   if(fComManager.isConnected) then
       begin
         fComManager.disconnect();
-        btn_Connect.Caption:='DisConnect';
+        btn_Connect.Caption:='Connect';
       end
    else
       begin
         fComManager.connect();
-        btn_Connect.Caption:='Connect';
+        fComManager.requestDeviceId();
+        btn_Connect.Caption:='DisConnect';
       end;
 end;
 
@@ -70,7 +73,17 @@ end;
  begin
       // update controls when we receive a response event
     case event.Command of
-         TFirmata.RSP_REPORT_ID: lblID.Caption:=char(event.Values[0]);      // ID Label
+         TFirmata.RSP_REPORT_ID: lblID.Caption:=inttostr(event.Values[TFirmata.VAL_ID]);     // ID Label
+         TFirmata.RSP_REPORT_RTC:
+         begin
+              lblID.Caption := inttostr(event.Values[TFirmata.VAL_ID]);     // ID Label
+              lblRemoteTime.Caption:= inttostr(event.Values[TFirmata.VAL_RTC_HOUR]) + ':'
+                                      + inttostr(event.Values[TFirmata.VAL_RTC_MIN]) + ':'
+                                      + inttostr(event.Values[TFirmata.VAL_RTC_SEC]);
+              lblRemoteDate.Caption:= inttostr(event.Values[TFirmata.VAL_RTC_DAY]) + '/'
+                                      + inttostr(event.Values[TFirmata.VAL_RTC_MONTH]) + '/'
+                                      + inttostr(event.Values[TFirmata.VAL_RTC_YEAR]);
+         end;
     end;
  end;
 

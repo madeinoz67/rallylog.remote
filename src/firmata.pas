@@ -21,7 +21,7 @@ Type
 
         CMD_SYSEX_STRING	 = $71;  // command identifier for string messages
 
-        CMD_SYSEX_START          = $F4;  // start of a SYSEX message
+        CMD_SYSEX_START          = $F0;  // start of a SYSEX message
         CMD_SYSEX_END            = $F7;  // end of a SYSEX message
         CMD_REPORT_VERSION       = $F9;  // report firmware version
         CMD_SYSTEM_RESET         = $FF;  // Reset
@@ -33,8 +33,21 @@ Type
         RSP_REPORT_RTC          = $04;
 
         // Values Parameters
-        VAL_ID                   = $01;
+        VAL_ID                   = $00;
         VAL_BAT                  = $01;
+
+        VAL_RTC_SEC              = $01;
+        VAL_RTC_MIN              = $02;
+        VAL_RTC_HOUR             = $03;
+        VAL_RTC_DAY              = $04;
+        VAL_RTC_MONTH            = $05;
+        VAL_RTC_YEAR             = $06;
+        VAL_RTC_CAL              = $07;
+        VAL_RTC_STATUS           = $08;
+
+
+
+
   end;
 
 implementation
