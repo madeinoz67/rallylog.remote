@@ -55,7 +55,7 @@ implementation
     with fComPort do
     begin
          BaudRate:=br_57600;   // default baud of FirmataLite Arduino library
-         Device:='COM3';       //TODO: Testing need to select system comport device instead of hard coded
+         Device:='COM7';       //TODO: Testing need to select system comport device instead of hard coded
          OnRxData:= @serialEvent;
     end;
   end;   // Create
@@ -235,7 +235,7 @@ implementation
    // print a sysex String Message to Console and Log file
   procedure TCommunicationManager.processSysexStringMessage(message: TDynByteArray);
   begin
-     //TODO: print message to console
+    //TODO: print message to console
     //TODO: prind message to log file
   end;
 

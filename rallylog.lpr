@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, pl_excontrols, appwindow, SynchedThreads, rallylogserialmanager,
-rallylogevents, serialdevice, firmata, remoteutils
+rallylogevents, serialdevice, firmata, remoteutils, multiloglaz
   { you can add units after this };
 
 {$R *.res}

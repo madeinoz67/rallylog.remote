@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 111
+  Left = 193
   Height = 193
-  Top = 218
+  Top = 194
   Width = 306
   Caption = 'Form1'
   ClientHeight = 193
@@ -11,7 +11,7 @@ object Form1: TForm1
   Position = poDesktopCenter
   LCLVersion = '1.1'
   object Label1: TLabel
-    Left = 56
+    Left = 128
     Height = 15
     Top = 33
     Width = 17
@@ -19,25 +19,26 @@ object Form1: TForm1
     ParentColor = False
   end
   object lblID: TLabel
-    Left = 112
+    Left = 144
     Height = 15
-    Top = 33
+    Top = 32
     Width = 24
     Caption = 'lblID'
     ParentColor = False
   end
   object Label2: TLabel
-    Left = 56
+    Left = 8
     Height = 15
-    Top = 56
-    Width = 40
-    Caption = 'Battery:'
+    Top = 88
+    Width = 37
+    Caption = 'Battery'
     ParentColor = False
+    OnClick = Label2Click
   end
   object lblBattery: TLabel
-    Left = 112
+    Left = 48
     Height = 15
-    Top = 56
+    Top = 40
     Width = 50
     Caption = 'lblBattery'
     ParentColor = False
@@ -52,19 +53,20 @@ object Form1: TForm1
     TabOrder = 0
   end
   object lblRemoteDate: TLabel
-    Left = 152
+    Left = 176
     Height = 15
-    Top = 104
+    Top = 80
     Width = 78
     Caption = 'lblRemoteDate'
     ParentColor = False
   end
   object lblRemoteTime: TLabel
-    Left = 56
+    Left = 88
     Height = 15
-    Top = 104
+    Top = 80
     Width = 81
     Alignment = taRightJustify
+    AutoSize = False
     Caption = 'lblRemoteTime'
     ParentColor = False
   end
@@ -98,12 +100,28 @@ object Form1: TForm1
   end
   object plLED1: TplLEDIndicator
     Left = 8
-    Height = 56
+    Height = 58
     Hint = 'Battery Voltage'
-    Top = 25
+    Top = 23
     Width = 32
     Position = 0
     Background = clBlack
     Foreground = clLime
+  end
+  object Label3: TLabel
+    Left = 48
+    Height = 15
+    Top = 16
+    Width = 13
+    Caption = '9V'
+    ParentColor = False
+  end
+  object Label4: TLabel
+    Left = 48
+    Height = 15
+    Top = 72
+    Width = 13
+    Caption = '5V'
+    ParentColor = False
   end
 end

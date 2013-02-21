@@ -6,8 +6,8 @@ interface
 
 uses
   remoteutils, firmata, rallylogserialmanager, rallyLogEvents, Classes,
-  SysUtils, FileUtil, cySimpleGauge, TplLEDIndicatorUnit, Forms, Controls,
-  Graphics, Dialogs, StdCtrls, Spin;
+  SysUtils, FileUtil, JLabeledDateTimeEdit, cySimpleGauge, TplLEDIndicatorUnit,
+  Forms, Controls, Graphics, Dialogs, StdCtrls, Spin;
 
 type
 
@@ -18,6 +18,8 @@ type
     btnBat: TButton;
     Label1: TLabel;
     Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
     lblBattery: TLabel;
     lblRemoteDate: TLabel;
     lblRemoteTime: TLabel;
@@ -29,6 +31,7 @@ type
     procedure btn_ConnectClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure Label2Click(Sender: TObject);
 
   private
     { private declarations }
@@ -83,6 +86,11 @@ begin
    fComManager.free();
 end;
 
+procedure TForm1.Label2Click(Sender: TObject);
+begin
+
+end;
+
 
 // handleRallylogEvent
 // callback when a sysex message is received and processed by the ComManager
@@ -91,31 +99,56 @@ end;
  procedure TForm1.handleRallyLogEvent(event: TRallyLogEvent);
  var
    voltage: Integer;
+   strMin, strSec, strDay, strMth: String;
  begin
       // update controls when we receive a response event
     case event.Command of
          TFirmata.RSP_REPORT_ID: lblID.Caption:=inttostr(event.Values[TFirmata.VAL_ID]);     // ID Label
-         TFirmata.RSP_REPORT_BAT: lblBattery.Caption := inttostr(event.Values[Tfirmata.VAL_BAT_HI]);
+         TFirmata.RSP_REPORT_BAT: lblBattery.Caption := inttostr((event.Values[Tfirmata.VAL_BAT_HI] *256) + event.Values[Tfirmata.VAL_BAT_LO]);
          TFirmata.RSP_REPORT_RTC:
          begin
               voltage := (event.Values[Tfirmata.VAL_BAT_HI] *256) + event.Values[Tfirmata.VAL_BAT_LO];
               with plLed1 do
               begin
-                   plLed1.Position:= trunc((voltage / 960) * 100);
-                   if (voltage > 700) AND (voltage < 600) then
+                  plLed1.Position:= trunc((100 * (voltage - 500)  ) / 400) ;    // scale to display 5.0-9.0v = 0-100%
+                   if (voltage < 750) AND (voltage > 650) then
                       Foreground:=clYellow
-                   else if (voltage <= 600) then
+                   else if (voltage <= 650) then
                       Foreground:=clRed
                    else
                      Foreground := clLime;
               end;
+
               lblID.Caption := inttostr(event.Values[TFirmata.VAL_ID]);     // ID Label
-              lblBattery.Caption := inttostr(voltage) ;
+              lblBattery.Caption := floattostr(voltage/100) ;
+
+              // Pad some of our returned RTC values for display
+              if (event.Values[TFirmata.VAL_RTC_MIN] < 10) then
+                 strMin := '0' + inttostr(event.Values[TFirmata.VAL_RTC_MIN])
+              else
+                strMin := inttostr(event.Values[TFirmata.VAL_RTC_MIN]);
+
+              if (event.Values[TFirmata.VAL_RTC_SEC] < 10) then
+                 strSec := '0' + inttostr(event.Values[TFirmata.VAL_RTC_SEC])
+              else
+                strSec := inttostr(event.Values[TFirmata.VAL_RTC_SEC]);
+
+              if (event.Values[TFirmata.VAL_RTC_DAY] < 10) then
+                 strDay := '0' + inttostr(event.Values[TFirmata.VAL_RTC_DAY])
+              else
+                strDay := inttostr(event.Values[TFirmata.VAL_RTC_DAY]);
+
+              if (event.Values[TFirmata.VAL_RTC_MONTH] < 10) then
+                 strMth := '0' + inttostr(event.Values[TFirmata.VAL_RTC_MONTH])
+              else
+                strMth := inttostr(event.Values[TFirmata.VAL_RTC_MONTH]);
+
+
               lblRemoteTime.Caption:= inttostr(event.Values[TFirmata.VAL_RTC_HOUR]) + ':'
-                                      + inttostr(event.Values[TFirmata.VAL_RTC_MIN]) + ':'
-                                      + inttostr(event.Values[TFirmata.VAL_RTC_SEC]);
-              lblRemoteDate.Caption:= inttostr(event.Values[TFirmata.VAL_RTC_DAY]) + '/'
-                                      + inttostr(event.Values[TFirmata.VAL_RTC_MONTH]) + '/'
+                                      + strMin + ':'
+                                      + strSec;
+              lblRemoteDate.Caption:= strDay + '/'
+                                      + strMth + '/'
                                       + inttostr(event.Values[TFirmata.VAL_RTC_YEAR]);
          end;
     end;
