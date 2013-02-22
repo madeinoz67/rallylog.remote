@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 193
+  Left = 248
   Height = 193
-  Top = 194
+  Top = 235
   Width = 306
   Caption = 'Form1'
   ClientHeight = 193
@@ -122,6 +122,14 @@ object Form1: TForm1
     Top = 72
     Width = 13
     Caption = '5V'
+    ParentColor = False
+  end
+  object lblDeviceCount: TLabel
+    Left = 229
+    Height = 15
+    Top = 107
+    Width = 67
+    Caption = 'deviceCount'
     ParentColor = False
   end
 end

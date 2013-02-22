@@ -5,12 +5,13 @@ unit rallylogserialmanager;
 interface
 
 uses
-  firmata, SdpoSerial,rallylogevents, Classes, SysUtils;
+  ConnectedDevice, firmata, SdpoSerial,rallylogevents, Classes, SysUtils;
 
 type
 
   TCommunicationManager = class(TRallyLogEventDispatcher)
     private
+      fDevice: TConnectedDevice;
       fComPort: TSdpoSerial;
       fConnected: boolean;
       fParsingSysex: boolean;
@@ -41,6 +42,8 @@ type
 
       property isConnected: boolean read fConnected;
 
+      property ConnectedDevice: TConnectedDevice read fDevice;
+
   end;
 
 implementation
@@ -48,6 +51,8 @@ implementation
   Constructor TCommunicationManager.Create();
   begin
     inherited;
+    fDevice := TConnectedDevice.create(nil);
+
     setLength(fStoredInputData,1);           // init the array
     fConnected := false;
     fParsingSysex := false;
@@ -55,13 +60,14 @@ implementation
     with fComPort do
     begin
          BaudRate:=br_57600;   // default baud of FirmataLite Arduino library
-         Device:='COM7';       //TODO: Testing need to select system comport device instead of hard coded
+         //Device:='COM1';       //TODO: Testing need to select system comport device instead of hard coded
          OnRxData:= @serialEvent;
     end;
   end;   // Create
 
   Destructor TCommunicationManager.Destroy();
   begin
+    fDevice.Free;
     fComport.Free;
     inherited;
   end;  // Destroy
@@ -96,8 +102,10 @@ implementation
 			message[totalSize-1] := TFirmata.CMD_SYSEX_END;
 
 			try
-                           result := fComPort.WriteBuffer(message, totalSize);
+                           for i:=0 to length(message)-1 do
+                               fComPort.SynSer.SendByte(message[i]);
                         finally
+                          setLength(message,0);
                         end;  // Try
 	end // If
         else
@@ -109,6 +117,8 @@ implementation
 
   procedure TCommunicationManager.connect();
   begin
+
+       fComPort.Device:='COM' + intToStr(fDevice.comPortNumber);
        fComPort.Open;
        fConnected := true;
   end; //connect

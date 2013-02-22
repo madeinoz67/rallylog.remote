@@ -20,6 +20,7 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    lblDeviceCount: TLabel;
     lblBattery: TLabel;
     lblRemoteDate: TLabel;
     lblRemoteTime: TLabel;
@@ -77,8 +78,7 @@ end;
 
 procedure TForm1.btnBatClick(Sender: TObject);
 begin
-  if (fComManager.isConnected) then
-     fComManager.requestBattery();
+  lblDeviceCount.Caption:= inttostr(fComManager.ConnectedDevice.comPortNumber);
 end;
 
 procedure TForm1.FormDestroy(Sender: TObject);

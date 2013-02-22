@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Debug"/>
-    <Units Count="20">
+    <Units Count="31">
       <Unit0>
         <Filename Value="rallylog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -12,7 +12,7 @@
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="64" Y="11"/>
+        <CursorPos X="17" Y="12"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -23,11 +23,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="appwindow"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="62"/>
-        <CursorPos X="62" Y="123"/>
+        <TopLine Value="49"/>
+        <CursorPos X="8" Y="67"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -36,7 +35,7 @@
         <Filename Value="src\synchedthreads.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SynchedThreads"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="14"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="28" Y="89"/>
@@ -49,8 +48,8 @@
         <UnitName Value="rallylogserialmanager"/>
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="221"/>
-        <CursorPos X="1" Y="233"/>
+        <TopLine Value="101"/>
+        <CursorPos X="64" Y="121"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -58,7 +57,7 @@
         <Filename Value="src\rallylogevents.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="rallylogevents"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="11"/>
         <WindowIndex Value="0"/>
         <TopLine Value="58"/>
         <CursorPos X="67" Y="54"/>
@@ -73,7 +72,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="5" Y="14"/>
-        <UsageCount Value="194"/>
+        <UsageCount Value="222"/>
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
@@ -84,52 +83,10 @@
         <WindowIndex Value="0"/>
         <TopLine Value="9"/>
         <CursorPos X="1" Y="48"/>
-        <UsageCount Value="194"/>
+        <UsageCount Value="222"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
-        <Filename Value="src\rallylogevent.pas"/>
-        <UnitName Value="rallylogevent"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="2"/>
-        <CursorPos X="15" Y="6"/>
-        <UsageCount Value="35"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="..\lazarus\components\Sdpo\SdpoSerial\sdposerial.pas"/>
-        <UnitName Value="SdpoSerial"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="235"/>
-        <CursorPos X="12" Y="257"/>
-        <UsageCount Value="64"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="..\rallylog\rallylog.configutility\units\ftd2xx\ftd2xxdevice.pas"/>
-        <UnitName Value="ftd2xxdevice"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="64"/>
-      </Unit9>
-      <Unit10>
-        <Filename Value="..\rallylog\rallylog.configutility\units\d2xxunit.pas"/>
-        <UnitName Value="D2XXUnit"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="76"/>
-        <CursorPos X="72" Y="313"/>
-        <UsageCount Value="64"/>
-      </Unit10>
-      <Unit11>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\sdposerial.pas"/>
-        <UnitName Value="SdpoSerial"/>
-        <EditorIndex Value="7"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="327"/>
-        <CursorPos X="1" Y="340"/>
-        <UsageCount Value="36"/>
-        <Loaded Value="True"/>
-      </Unit11>
-      <Unit12>
         <Filename Value="src\remoteutils.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="remoteutils"/>
@@ -137,7 +94,50 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="37" Y="31"/>
+        <UsageCount Value="94"/>
+        <Loaded Value="True"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="src\rallylogevent.pas"/>
+        <UnitName Value="rallylogevent"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="2"/>
+        <CursorPos X="15" Y="6"/>
+        <UsageCount Value="32"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="..\lazarus\components\Sdpo\SdpoSerial\sdposerial.pas"/>
+        <UnitName Value="SdpoSerial"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="235"/>
+        <CursorPos X="12" Y="257"/>
         <UsageCount Value="61"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="..\rallylog\rallylog.configutility\units\ftd2xx\ftd2xxdevice.pas"/>
+        <UnitName Value="ftd2xxdevice"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="61"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="..\rallylog\rallylog.configutility\units\d2xxunit.pas"/>
+        <UnitName Value="D2XXUnit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="76"/>
+        <CursorPos X="72" Y="313"/>
+        <UsageCount Value="61"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\sdposerial.pas"/>
+        <UnitName Value="SdpoSerial"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="220"/>
+        <CursorPos X="1" Y="233"/>
+        <UsageCount Value="52"/>
         <Loaded Value="True"/>
       </Unit12>
       <Unit13>
@@ -146,7 +146,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="2699"/>
         <CursorPos X="1" Y="2719"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="43"/>
         <Loaded Value="True"/>
       </Unit13>
       <Unit14>
@@ -154,32 +154,35 @@
         <WindowIndex Value="0"/>
         <TopLine Value="33"/>
         <CursorPos X="1" Y="56"/>
-        <UsageCount Value="24"/>
+        <UsageCount Value="21"/>
       </Unit14>
       <Unit15>
-        <Filename Value="..\rallylog.configutility\units\ftchipid.pas"/>
-        <UnitName Value="FTChipID"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ftd2xx"/>
+        <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="9"/>
+        <TopLine Value="78"/>
+        <CursorPos X="1" Y="151"/>
+        <UsageCount Value="48"/>
+        <Loaded Value="True"/>
       </Unit15>
       <Unit16>
         <Filename Value="..\rallylog.configutility\units\d2xxunit.pas"/>
         <UnitName Value="D2XXUnit"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="190"/>
+        <TopLine Value="265"/>
         <CursorPos X="1" Y="213"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="10"/>
       </Unit16>
       <Unit17>
         <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
         <UnitName Value="synaser"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1043"/>
-        <CursorPos X="1" Y="1054"/>
-        <UsageCount Value="13"/>
+        <TopLine Value="387"/>
+        <CursorPos X="26" Y="408"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit17>
       <Unit18>
@@ -188,7 +191,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="6"/>
       </Unit18>
       <Unit19>
         <Filename Value="..\rallylog.configutility\units\mainform.pas"/>
@@ -196,144 +199,246 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="6"/>
       </Unit19>
+      <Unit20>
+        <Filename Value="C:\codetyphon\lazarus\components\pl_LuiControls\source\allluicontrolsregister.pas"/>
+        <UnitName Value="allluicontrolsregister"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="24"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="7"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="C:\codetyphon\lazarus\components\pl_LuiControls\source\multilog\multiloglcl.pas"/>
+        <UnitName Value="multiloglcl"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="7"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="C:\codetyphon\lazarus\components\pl_LuiControls\source\multilog\multilog.pas"/>
+        <UnitName Value="MultiLog"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="7"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="C:\codetyphon\lazarus\components\pl_LuiControls\source\multilog\logtreeview.pas"/>
+        <UnitName Value="logtreeview"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="7"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="C:\codetyphon\lazarus\components\pl_LuiControls\source\multilog\sharedloggerlcl.pas"/>
+        <UnitName Value="sharedloggerlcl"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="7"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="C:\codetyphon\lazarus\components\pl_LuiControls\source\multilog\sharedlogger.pas"/>
+        <UnitName Value="sharedlogger"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="7"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="src\ftd2xx\D2XXUnit.pas"/>
+        <UnitName Value="D2XXUnit"/>
+        <EditorIndex Value="10"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="136"/>
+        <CursorPos X="49" Y="316"/>
+        <UsageCount Value="24"/>
+        <Loaded Value="True"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="src\connecteddevice.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ConnectedDevice"/>
+        <EditorIndex Value="13"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="56"/>
+        <CursorPos X="1" Y="79"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="..\rallylog.configutility\units\ftchipid.pas"/>
+        <UnitName Value="FTChipID"/>
+        <EditorIndex Value="12"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="50"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="..\rallylog.configutility\units\connecteddevice.pas"/>
+        <UnitName Value="ConnectedDevice"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="28" Y="123"/>
+        <UsageCount Value="10"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="..\rallylog.configutility\units\ftd2xx\ftd2xxdevice.pas"/>
+        <UnitName Value="ftd2xxdevice"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit30>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="1030" Column="1" TopLine="1016"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="150" Column="1" TopLine="140"/>
       </Position1>
       <Position2>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="1032" Column="1" TopLine="1016"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="151" Column="1" TopLine="140"/>
       </Position2>
       <Position3>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="1033" Column="1" TopLine="1016"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="118" Column="41" TopLine="95"/>
       </Position3>
       <Position4>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="1038" Column="1" TopLine="1019"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="119" Column="34" TopLine="96"/>
       </Position4>
       <Position5>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="1042" Column="1" TopLine="1031"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="86" Column="57" TopLine="59"/>
       </Position5>
       <Position6>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="1043" Column="1" TopLine="1031"/>
+        <Filename Value="src\ftd2xx\D2XXUnit.pas"/>
+        <Caret Line="316" Column="49" TopLine="136"/>
       </Position6>
       <Position7>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="1046" Column="1" TopLine="1031"/>
+        <Filename Value="src\connecteddevice.pas"/>
+        <Caret Line="79" Column="1" TopLine="56"/>
       </Position7>
       <Position8>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="1052" Column="1" TopLine="1033"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="176" Column="1" TopLine="153"/>
       </Position8>
       <Position9>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="2112" Column="1" TopLine="2100"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="164" Column="1" TopLine="153"/>
       </Position9>
       <Position10>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="2113" Column="1" TopLine="2100"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="165" Column="1" TopLine="153"/>
       </Position10>
       <Position11>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="2121" Column="1" TopLine="2101"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="166" Column="1" TopLine="153"/>
       </Position11>
       <Position12>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="1053" Column="1" TopLine="1042"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="171" Column="1" TopLine="153"/>
       </Position12>
       <Position13>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="2137" Column="1" TopLine="2125"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="177" Column="1" TopLine="153"/>
       </Position13>
       <Position14>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="2139" Column="1" TopLine="2125"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="180" Column="1" TopLine="153"/>
       </Position14>
       <Position15>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\synaser.pas"/>
-        <Caret Line="1054" Column="1" TopLine="1043"/>
+        <Filename Value="src\connecteddevice.pas"/>
+        <Caret Line="80" Column="1" TopLine="56"/>
       </Position15>
       <Position16>
-        <Filename Value="..\..\lazarus\components\Sdpo\SdpoSerial\sdposerial.pas"/>
-        <Caret Line="340" Column="1" TopLine="327"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="151" Column="1" TopLine="128"/>
       </Position16>
       <Position17>
-        <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="108" Column="1" TopLine="97"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="152" Column="1" TopLine="128"/>
       </Position17>
       <Position18>
-        <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="75" Column="1" TopLine="63"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="119" Column="1" TopLine="96"/>
       </Position18>
       <Position19>
-        <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="233" Column="1" TopLine="221"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="120" Column="1" TopLine="96"/>
       </Position19>
       <Position20>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="79" Column="1" TopLine="61"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="121" Column="1" TopLine="96"/>
       </Position20>
       <Position21>
-        <Filename Value="src\rallylogserialmanager.pas"/>
-        <Caret Line="233" Column="1" TopLine="221"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="154" Column="1" TopLine="131"/>
       </Position21>
       <Position22>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="142" Column="39" TopLine="128"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="155" Column="1" TopLine="131"/>
       </Position22>
       <Position23>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="128" Column="19" TopLine="107"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="156" Column="1" TopLine="131"/>
       </Position23>
       <Position24>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="94" Column="28" TopLine="87"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="125" Column="1" TopLine="102"/>
       </Position24>
       <Position25>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="136" Column="69" TopLine="121"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="126" Column="1" TopLine="102"/>
       </Position25>
       <Position26>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="133" Column="19" TopLine="122"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="127" Column="1" TopLine="102"/>
       </Position26>
       <Position27>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="105" Column="108" TopLine="91"/>
+        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Caret Line="121" Column="64" TopLine="101"/>
       </Position27>
       <Position28>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="77" Column="1" TopLine="65"/>
+        <Filename Value="src\connecteddevice.pas"/>
+        <Caret Line="79" Column="1" TopLine="56"/>
       </Position28>
       <Position29>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="78" Column="1" TopLine="66"/>
+        <Filename Value="src\ftd2xx.pas"/>
+        <Caret Line="151" Column="1" TopLine="78"/>
       </Position29>
       <Position30>
-        <Filename Value="src\appwindow.pas"/>
-        <Caret Line="123" Column="61" TopLine="119"/>
+        <Filename Value="src\connecteddevice.pas"/>
+        <Caret Line="79" Column="1" TopLine="56"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
-    <BreakPoints Count="1">
+    <BreakPoints Count="2">
       <Item1>
         <Kind Value="bpkSource"/>
         <WatchScope Value="wpsLocal"/>
         <WatchKind Value="wpkWrite"/>
-        <Source Value="src\appwindow.pas"/>
-        <Line Value="80"/>
+        <Source Value="src\rallylogserialmanager.pas"/>
+        <Line Value="248"/>
       </Item1>
+      <Item2>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="src\ftd2xx\D2XXUnit.pas"/>
+        <Line Value="304"/>
+      </Item2>
     </BreakPoints>
     <Watches Count="1">
       <Item1>

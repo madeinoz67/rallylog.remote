@@ -63,7 +63,7 @@
     </RunParams>
     <RequiredPackages Count="6">
       <Item1>
-        <PackageName Value="multiloglaz"/>
+        <PackageName Value="pl_luicontrols"/>
       </Item1>
       <Item2>
         <PackageName Value="pl_jujiboutils"/>
@@ -81,7 +81,7 @@
         <PackageName Value="LCL"/>
       </Item6>
     </RequiredPackages>
-    <Units Count="8">
+    <Units Count="10">
       <Unit0>
         <Filename Value="rallylog.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -125,6 +125,16 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="remoteutils"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="src\ftd2xx.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ftd2xx"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="src\connecteddevice.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ConnectedDevice"/>
+      </Unit9>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -136,7 +146,7 @@
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
       <Libraries Value="db;lib\$(TargetCPU)-$(TargetOS)"/>
-      <OtherUnitFiles Value="units;..\lazarus\components\luipack\multilog;units\ftd2xx;src"/>
+      <OtherUnitFiles Value="src;src\ftd2xx"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\DEBUG"/>
     </SearchPaths>
     <Parsing>
