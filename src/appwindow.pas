@@ -7,37 +7,39 @@ interface
 uses
   remoteutils, firmata, rallylogserialmanager, rallyLogEvents, Classes,
   SysUtils, FileUtil, JLabeledDateTimeEdit, cySimpleGauge, TplLEDIndicatorUnit,
-  Forms, Controls, Graphics, Dialogs, StdCtrls, Spin;
+  Forms, Controls, Graphics, Dialogs, StdCtrls, Spin, ExtCtrls;
 
 type
 
   { TForm1 }
   TForm1 = class(TForm,IRallyLogEventListener)
-    btn_Connect: TButton;
+    btn_SyncTime: TButton;
     btnSetID: TButton;
-    btnBat: TButton;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    lblDeviceCount: TLabel;
     lblBattery: TLabel;
     lblRemoteDate: TLabel;
+    lblLocalDate: TLabel;
     lblRemoteTime: TLabel;
     lblID: TLabel;
+    lblLocalTime: TLabel;
     plLED1: TplLEDIndicator;
     spineditID: TSpinEdit;
-    procedure btnBatClick(Sender: TObject);
+    Timer1: TTimer;
     procedure btnSetIDClick(Sender: TObject);
-    procedure btn_ConnectClick(Sender: TObject);
+    procedure btn_SyncTimeClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
-    procedure Label2Click(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
 
   private
     { private declarations }
     fComManager: TCommunicationManager;
     procedure handleRallyLogEvent(event: TRallyLogEvent);
+    procedure handleDeviceConnectEvent(sender: TObject);
+    procedure handleDeviceDisConnectEvent(sender: TObject);
   public
     { public declarations }
   end;
@@ -53,21 +55,17 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
    fComManager := TCommunicationManager.Create();
    fComManager.addSysexEventListener(self);
+   fComManager.ConnectedDevice.onDeviceConnected:= @handleDeviceConnectEvent;
+   fComManager.ConnectedDevice.onDeviceDisconnected:= @handleDeviceDisConnectEvent;
+
 end;
 
-procedure TForm1.btn_ConnectClick(Sender: TObject);
+procedure TForm1.btn_SyncTimeClick(Sender: TObject);
 begin
    if(fComManager.isConnected) then
-      begin
-        fComManager.disconnect();
-        btn_Connect.Caption:='Connect';
-      end
-   else
-      begin
-        fComManager.connect();
-        fComManager.requestDeviceId();
-        btn_Connect.Caption:='DisConnect';
-      end;
+   begin
+        fComManager.syncTimeDate();
+   end;
 end;
 
 procedure TForm1.btnSetIDClick(Sender: TObject);
@@ -76,19 +74,15 @@ begin
      fComManager.setId(spineditID.Value);
 end;
 
-procedure TForm1.btnBatClick(Sender: TObject);
-begin
-  lblDeviceCount.Caption:= inttostr(fComManager.ConnectedDevice.comPortNumber);
-end;
-
 procedure TForm1.FormDestroy(Sender: TObject);
 begin
    fComManager.free();
 end;
 
-procedure TForm1.Label2Click(Sender: TObject);
+procedure TForm1.Timer1Timer(Sender: TObject);
 begin
-
+  lblLocalTime.caption:= TimeToStr(time);
+  lblLocalDate.Caption:= DateToStr(date);
 end;
 
 
@@ -152,6 +146,16 @@ end;
                                       + inttostr(event.Values[TFirmata.VAL_RTC_YEAR]);
          end;
     end;
+ end;
+
+ procedure TForm1.handleDeviceConnectEvent(sender: TObject);
+ begin
+     fComManager.connect();
+ end;
+
+ procedure TForm1.handleDeviceDisConnectEvent(sender: TObject);
+ begin
+      fComManager.disconnect();
  end;
 
 end.

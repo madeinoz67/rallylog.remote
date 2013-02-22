@@ -33,41 +33,37 @@ object Form1: TForm1
     Width = 37
     Caption = 'Battery'
     ParentColor = False
-    OnClick = Label2Click
   end
   object lblBattery: TLabel
     Left = 48
-    Height = 15
+    Height = 1
     Top = 40
-    Width = 50
-    Caption = 'lblBattery'
+    Width = 1
     ParentColor = False
   end
-  object btn_Connect: TButton
-    Left = 56
+  object btn_SyncTime: TButton
+    Left = 96
     Height = 36
     Top = 136
     Width = 91
-    Caption = 'Connect'
-    OnClick = btn_ConnectClick
+    Caption = 'Sync Time'
+    OnClick = btn_SyncTimeClick
     TabOrder = 0
   end
   object lblRemoteDate: TLabel
     Left = 176
-    Height = 15
-    Top = 80
-    Width = 78
-    Caption = 'lblRemoteDate'
+    Height = 1
+    Top = 56
+    Width = 1
     ParentColor = False
   end
   object lblRemoteTime: TLabel
     Left = 88
     Height = 15
-    Top = 80
+    Top = 56
     Width = 81
     Alignment = taRightJustify
     AutoSize = False
-    Caption = 'lblRemoteTime'
     ParentColor = False
   end
   object spineditID: TSpinEdit
@@ -88,15 +84,6 @@ object Form1: TForm1
     Caption = 'Set ID'
     OnClick = btnSetIDClick
     TabOrder = 2
-  end
-  object btnBat: TButton
-    Left = 232
-    Height = 25
-    Top = 56
-    Width = 51
-    Caption = 'Get Bat'
-    OnClick = btnBatClick
-    TabOrder = 3
   end
   object plLED1: TplLEDIndicator
     Left = 8
@@ -124,12 +111,27 @@ object Form1: TForm1
     Caption = '5V'
     ParentColor = False
   end
-  object lblDeviceCount: TLabel
-    Left = 229
+  object lblLocalTime: TLabel
+    Left = 88
     Height = 15
-    Top = 107
-    Width = 67
-    Caption = 'deviceCount'
+    Top = 80
+    Width = 81
+    Alignment = taRightJustify
+    AutoSize = False
+    Caption = 'lblLocalTime'
     ParentColor = False
+  end
+  object lblLocalDate: TLabel
+    Left = 176
+    Height = 15
+    Top = 80
+    Width = 65
+    Caption = 'lblLocalDate'
+    ParentColor = False
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    left = 224
+    top = 136
   end
 end

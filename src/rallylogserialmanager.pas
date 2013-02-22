@@ -36,9 +36,10 @@ type
       procedure requestBattery();
 
       procedure setId(id: byte);
+      procedure syncTimeDate();
 
-      procedure connect();
-      procedure disconnect();
+      function connect(): boolean;
+      function disconnect(): boolean;
 
       property isConnected: boolean read fConnected;
 
@@ -115,21 +116,29 @@ implementation
 
   end; //SendSysexMessage
 
-  procedure TCommunicationManager.connect();
+  function TCommunicationManager.connect(): Boolean;
   begin
+       if(fDevice.isConnected) then
+       begin
+          while ( fDevice.comPortNumber = 0) do
+             Sleep(50);   // Wait until Comport# get assigned
 
-       fComPort.Device:='COM' + intToStr(fDevice.comPortNumber);
-       fComPort.Open;
-       fConnected := true;
+          fComPort.Device:='COM' + intToStr(fDevice.comPortNumber);
+          fComPort.Open;
+          fConnected := true;
+       end
+       else
+          result := fConnected;
   end; //connect
 
-  procedure TCommunicationManager.disconnect();
+  function TCommunicationManager.disconnect(): boolean;
   begin
        fComPort.Close;
        fConnected := false;
+       result := fConnected;
   end;  //disconnect
 
-  //Callback whenever port receives data
+  //Callback whenever port receives some data
   procedure TCommunicationManager.serialEvent(Sender: TObject);
   begin
     While (fComPort.DataAvailable) do
@@ -257,6 +266,26 @@ implementation
       setLength(value, 1);
       value[0] := id;
       sendSysexMessage(TFirmata.CMD_ID_SET, value);
+      setLength(value,0);
+ end;
+
+ procedure TCommunicationManager.syncTimeDate();
+ var
+    value: TDynByteArray;
+    DD,MTH,YY: word;
+    HH,MIN,SS,MS: word;
+ begin
+      setLength(value, 11);
+      DecodeDate(Date,YY,MTH,DD);
+      DecodeTime(Time,HH,MIN,SS, MS);
+      value[TFirmata.VAL_RTC_YEAR] := YY - 2000;
+      value[TFirmata.VAL_RTC_MONTH] := MTH;
+      value[TFirmata.VAL_RTC_DAY] := DD;
+      value[TFirmata.VAL_RTC_HOUR] := HH;
+      value[TFirmata.VAL_RTC_MIN] := MIN;
+      value[TFirmata.VAL_RTC_SEC] := SS +1;
+      sendSysexMessage(TFirmata.CMD_RTC_SET, value);
+      setLength(value,0);
  end;
 
 end.
