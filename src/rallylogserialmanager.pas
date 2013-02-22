@@ -78,7 +78,12 @@ implementation
      value: TDynByteArray;
   begin
        setLength(value,1);
-      result := sendSysexMessage(command, value);
+       try
+          result := sendSysexMessage(command, value);
+
+       finally
+          setLength(value,0);
+       end;
   end;  //SendSysexMEssage
 
   function TCommunicationManager.sendSysexMessage(const command: byte; const values: TDynByteArray): integer;
@@ -190,6 +195,7 @@ implementation
 		       end; //while
 
 		     processSysexStringMessage(message);    // do something with the String Message
+                     setLength(message,0);                  //deallocate
                   end // if
 
                   else // Sysex all other types of binary Commands
@@ -211,6 +217,7 @@ implementation
 		     end; //while
 
 		     dispatchSysexEvent(TRallyLogEvent.Create(bCommand, values));  // send sysex message to all listeners
+                     setLength(values,0);                               // deallocate values
 
                   end; //else
                   setLength(fStoredInputData,TFirmata.SYSEX_MAX_DATA_BYTES);

@@ -43,7 +43,7 @@ type
       public
         Constructor Create();  virtual;
         Destructor Destroy();  override;
-        procedure dispatchSysexEvent(sysexEvent: TRallyLogEvent);
+        procedure dispatchSysexEvent(const sysexEvent: TRallyLogEvent);
         procedure addSysexEventListener(listener: IRallyLogEventListener);
         procedure removeSysexEventListener(listener: IRallyLogEventListener);
     end;
@@ -53,6 +53,7 @@ implementation
      { TRallyLogEvent }
      Constructor TRallyLogEvent.Create(const command: Byte; const values: TDynByteArray);
      begin
+
         fCommand := command;
         fValues := values;
      end;
@@ -94,7 +95,7 @@ implementation
       end;
 
       // tell all listeners to process the event message
-      procedure TRallyLogEventDispatcher.dispatchSysexEvent(sysexEvent: TRallyLogEvent);
+      procedure TRallyLogEventDispatcher.dispatchSysexEvent(const sysexEvent: TRallyLogEvent);
       var
          i: integer;
       begin

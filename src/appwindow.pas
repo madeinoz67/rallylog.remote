@@ -15,10 +15,13 @@ type
   TForm1 = class(TForm,IRallyLogEventListener)
     btn_SyncTime: TButton;
     btnSetID: TButton;
+    Button1: TButton;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
     lblBattery: TLabel;
     lblRemoteDate: TLabel;
     lblLocalDate: TLabel;
@@ -30,6 +33,7 @@ type
     Timer1: TTimer;
     procedure btnSetIDClick(Sender: TObject);
     procedure btn_SyncTimeClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
@@ -67,6 +71,13 @@ begin
         fComManager.syncTimeDate();
    end;
 end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+     fComManager.disconnect();
+     Application.Terminate;
+end;
+
 
 procedure TForm1.btnSetIDClick(Sender: TObject);
 begin
@@ -151,11 +162,20 @@ end;
  procedure TForm1.handleDeviceConnectEvent(sender: TObject);
  begin
      fComManager.connect();
+     btn_SyncTime.Enabled:=true;
+     btnSetID.Enabled:=true;
  end;
 
  procedure TForm1.handleDeviceDisConnectEvent(sender: TObject);
  begin
       fComManager.disconnect();
+      lblRemoteTime.Caption:='';
+      lblRemoteDate.Caption:='';
+      lblID.Caption:='';
+      lblBattery.Caption:='0';
+      plLed1.Position:=0;
+      btn_SyncTime.Enabled:=false;
+      btnSetID.Enabled:=false;
  end;
 
 end.

@@ -28,9 +28,20 @@
           </Target>
           <SearchPaths>
             <IncludeFiles Value="$(ProjOutDir)"/>
-            <OtherUnitFiles Value="units;..\lazarus\components\luipack\multilog"/>
+            <Libraries Value="db;lib\$(TargetCPU)-$(TargetOS)"/>
+            <OtherUnitFiles Value="src"/>
             <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\RELEASE"/>
           </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <StaticKeyword Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Optimizations>
+              <OptimizationLevel Value="2"/>
+            </Optimizations>
+          </CodeGeneration>
           <Linking>
             <Debugging>
               <GenerateDebugInfo Value="False"/>
