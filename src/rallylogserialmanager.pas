@@ -262,7 +262,7 @@ implementation
   procedure TCommunicationManager.processSysexStringMessage(message: TDynByteArray);
   begin
     //TODO: print message to console
-    //TODO: prind message to log file
+    //TODO: print message to log file
   end;
 
   // sets ID
