@@ -19,14 +19,14 @@
       <Unit1>
         <Filename Value="src\appwindow.pas"/>
         <IsPartOfProject Value="True"/>
-        <ComponentName Value="Form1"/>
+        <ComponentName Value="FormMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="appwindow"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="2" Y="8"/>
+        <TopLine Value="37"/>
+        <CursorPos X="24" Y="62"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -46,10 +46,11 @@
         <Filename Value="src\rl_commsmanager.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="rl_commsmanager"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="2" Y="25"/>
+        <TopLine Value="44"/>
+        <CursorPos X="31" Y="69"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -82,7 +83,7 @@
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
+        <CursorPos X="37" Y="6"/>
         <UsageCount Value="222"/>
         <Loaded Value="True"/>
       </Unit6>
@@ -109,11 +110,10 @@
         <Filename Value="src\rl_connecteddevice.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="rl_connecteddevice"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="45" Y="6"/>
+        <TopLine Value="14"/>
+        <CursorPos X="68" Y="10"/>
         <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit9>
@@ -292,11 +292,15 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="1" HistoryIndex="0">
+    <JumpHistory Count="2" HistoryIndex="1">
       <Position1>
         <Filename Value="rallylog.lpr"/>
         <Caret Line="10" Column="25" TopLine="1"/>
       </Position1>
+      <Position2>
+        <Filename Value="src\appwindow.pas"/>
+        <Caret Line="8" Column="2" TopLine="1"/>
+      </Position2>
     </JumpHistory>
   </ProjectSession>
   <Debugging>

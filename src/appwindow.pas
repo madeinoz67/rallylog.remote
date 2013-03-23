@@ -11,8 +11,8 @@ uses
 
 type
 
-  { TForm1 }
-  TForm1 = class(TForm,IRallyLogEventListener)
+  { TFormMain }
+  TFormMain = class(TForm,IRallyLogEventListener)
     btn_SyncTime: TButton;
     btnSetID: TButton;
     Button1: TButton;
@@ -49,13 +49,13 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormMain: TFormMain;
 
 implementation
 
 {$R *.lfm}
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TFormMain.FormCreate(Sender: TObject);
 begin
    fComManager := TCommunicationManager.Create();
    fComManager.addSysexEventListener(self);
@@ -64,7 +64,7 @@ begin
 
 end;
 
-procedure TForm1.btn_SyncTimeClick(Sender: TObject);
+procedure TFormMain.btn_SyncTimeClick(Sender: TObject);
 begin
    if(fComManager.isConnected) then
    begin
@@ -72,25 +72,25 @@ begin
    end;
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TFormMain.Button1Click(Sender: TObject);
 begin
      fComManager.disconnect();
      Application.Terminate;
 end;
 
 
-procedure TForm1.btnSetIDClick(Sender: TObject);
+procedure TFormMain.btnSetIDClick(Sender: TObject);
 begin
   if (fComManager.isConnected) then
      fComManager.setId(spineditID.Value);
 end;
 
-procedure TForm1.FormDestroy(Sender: TObject);
+procedure TFormMain.FormDestroy(Sender: TObject);
 begin
    fComManager.free();
 end;
 
-procedure TForm1.Timer1Timer(Sender: TObject);
+procedure TFormMain.Timer1Timer(Sender: TObject);
 begin
   lblLocalTime.caption:= TimeToStr(time);
   lblLocalDate.Caption:= DateToStr(date);
@@ -101,7 +101,7 @@ end;
 // callback when a sysex message is received and processed by the ComManager
 // This will contain values requested or broadcast from the Device and is
 // used to update the GUI fields
- procedure TForm1.handleRallyLogEvent(event: TRallyLogEvent);
+ procedure TFormMain.handleRallyLogEvent(event: TRallyLogEvent);
  var
    voltage: Integer;
    strMin, strSec, strDay, strMth: String;
@@ -159,14 +159,14 @@ end;
     end;
  end;
 
- procedure TForm1.handleDeviceConnectEvent(sender: TObject);
+ procedure TFormMain.handleDeviceConnectEvent(sender: TObject);
  begin
      fComManager.connect();
      btn_SyncTime.Enabled:=true;
      btnSetID.Enabled:=true;
  end;
 
- procedure TForm1.handleDeviceDisConnectEvent(sender: TObject);
+ procedure TFormMain.handleDeviceDisConnectEvent(sender: TObject);
  begin
       fComManager.disconnect();
       lblRemoteTime.Caption:='';

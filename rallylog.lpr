@@ -17,7 +17,7 @@ rl_firmata, ftd2xx, rl_connecteddevice,
 begin
   RequireDerivedFormResource := True;
   Application.Initialize;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormMain, FormMain);
   Application.Run;
 end.
 
