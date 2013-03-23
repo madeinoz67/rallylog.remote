@@ -66,7 +66,7 @@ type
 
       property isConnected: boolean read fConnected;
 
-      property rl_connecteddevice: TConnectedDevice read fDevice;
+      property connectedDevice: TConnectedDevice read fDevice;
 
   end;
 
