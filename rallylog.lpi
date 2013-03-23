@@ -34,6 +34,7 @@
           </SearchPaths>
           <Parsing>
             <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
               <StaticKeyword Value="True"/>
             </SyntaxOptions>
           </Parsing>
@@ -112,9 +113,9 @@
         <UnitName Value="SynchedThreads"/>
       </Unit2>
       <Unit3>
-        <Filename Value="src\rallylogserialmanager.pas"/>
+        <Filename Value="src\rl_communicationmanager.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="rallylogserialmanager"/>
+        <UnitName Value="rl_communicationmanager"/>
       </Unit3>
       <Unit4>
         <Filename Value="src\rallylogevents.pas"/>
@@ -162,6 +163,7 @@
     </SearchPaths>
     <Parsing>
       <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
         <StaticKeyword Value="True"/>
       </SyntaxOptions>
     </Parsing>

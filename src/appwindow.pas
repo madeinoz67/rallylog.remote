@@ -5,7 +5,7 @@ unit appwindow;
 interface
 
 uses
-  remoteutils, firmata, rallylogserialmanager, rallyLogEvents, Classes,
+  remoteutils, firmata, rl_communicationmanager, rallyLogEvents, Classes,
   SysUtils, FileUtil, JLabeledDateTimeEdit, cySimpleGauge, TplLEDIndicatorUnit,
   Forms, Controls, Graphics, Dialogs, StdCtrls, Spin, ExtCtrls;
 
