@@ -5,7 +5,7 @@ unit remoteutils;
 interface
 
 uses
-  rallylogevents,Classes, SysUtils;
+  rl_msgevents,Classes, SysUtils;
 
 implementation
      // Convert Stribng to Byet

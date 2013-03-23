@@ -118,9 +118,9 @@
         <UnitName Value="rl_commsmanager"/>
       </Unit3>
       <Unit4>
-        <Filename Value="src\rallylogevents.pas"/>
+        <Filename Value="src\rl_msgevents.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="rallylogevents"/>
+        <UnitName Value="rl_msgevents"/>
       </Unit4>
       <Unit5>
         <Filename Value="src\serialdevice.pas"/>

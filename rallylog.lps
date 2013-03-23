@@ -54,13 +54,14 @@
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
-        <Filename Value="src\rallylogevents.pas"/>
+        <Filename Value="src\rl_msgevents.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="rallylogevents"/>
+        <UnitName Value="rl_msgevents"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="19"/>
-        <CursorPos X="44" Y="46"/>
+        <TopLine Value="1"/>
+        <CursorPos X="20" Y="6"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -79,11 +80,10 @@
         <Filename Value="src\rl_firmata.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="rl_firmata"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="32" Y="6"/>
+        <CursorPos X="1" Y="1"/>
         <UsageCount Value="222"/>
         <Loaded Value="True"/>
       </Unit6>
@@ -295,23 +295,11 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="4" HistoryIndex="3">
+    <JumpHistory Count="1" HistoryIndex="0">
       <Position1>
-        <Filename Value="src\rallylogevents.pas"/>
-        <Caret Line="21" Column="37" TopLine="1"/>
-      </Position1>
-      <Position2>
-        <Filename Value="src\rallylogevents.pas"/>
-        <Caret Line="98" Column="67" TopLine="70"/>
-      </Position2>
-      <Position3>
-        <Filename Value="src\rallylogevents.pas"/>
-        <Caret Line="56" Column="9" TopLine="32"/>
-      </Position3>
-      <Position4>
         <Filename Value="rallylog.lpr"/>
         <Caret Line="10" Column="25" TopLine="1"/>
-      </Position4>
+      </Position1>
     </JumpHistory>
   </ProjectSession>
   <Debugging>
