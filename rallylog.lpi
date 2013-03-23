@@ -113,9 +113,9 @@
         <UnitName Value="SynchedThreads"/>
       </Unit2>
       <Unit3>
-        <Filename Value="src\rl_communicationmanager.pas"/>
+        <Filename Value="src\rl_commsmanager.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="rl_communicationmanager"/>
+        <UnitName Value="rl_commsmanager"/>
       </Unit3>
       <Unit4>
         <Filename Value="src\rallylogevents.pas"/>

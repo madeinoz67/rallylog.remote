@@ -26,7 +26,7 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="75"/>
+        <TopLine Value="1"/>
         <CursorPos X="11" Y="76"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
@@ -44,9 +44,9 @@
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
-        <Filename Value="src\rl_communicationmanager.pas"/>
+        <Filename Value="src\rl_commsmanager.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="rl_communicationmanager"/>
+        <UnitName Value="rl_commsmanager"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -95,7 +95,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="35" Y="11"/>
-        <UsageCount Value="100"/>
+        <UsageCount Value="101"/>
         <Loaded Value="True"/>
       </Unit7>
       <Unit8>
@@ -106,7 +106,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="165"/>
-        <UsageCount Value="54"/>
+        <UsageCount Value="55"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
@@ -117,7 +117,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="31"/>
         <CursorPos X="1" Y="92"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
