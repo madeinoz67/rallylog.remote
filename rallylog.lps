@@ -26,7 +26,7 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="11" Y="76"/>
+        <CursorPos X="2" Y="8"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -35,7 +35,8 @@
         <Filename Value="src\synchedthreads.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SynchedThreads"/>
-        <EditorIndex Value="10"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="28" Y="89"/>
@@ -57,8 +58,7 @@
         <Filename Value="src\rl_msgevents.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="rl_msgevents"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="20" Y="6"/>
@@ -89,35 +89,32 @@
       </Unit6>
       <Unit7>
         <Filename Value="src\remoteutils.pas"/>
-        <IsPartOfProject Value="True"/>
         <UnitName Value="remoteutils"/>
-        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="35" Y="11"/>
         <UsageCount Value="101"/>
-        <Loaded Value="True"/>
       </Unit7>
       <Unit8>
         <Filename Value="src\ftd2xx.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ftd2xx"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="165"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="56"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="src\connecteddevice.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ConnectedDevice"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
         <TopLine Value="31"/>
         <CursorPos X="1" Y="92"/>
-        <UsageCount Value="28"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -260,7 +257,7 @@
       <Unit27>
         <Filename Value="src\ftd2xx\D2XXUnit.pas"/>
         <UnitName Value="D2XXUnit"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="49" Y="316"/>
