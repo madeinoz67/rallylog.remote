@@ -138,9 +138,9 @@
         <UnitName Value="ftd2xx"/>
       </Unit7>
       <Unit8>
-        <Filename Value="src\connecteddevice.pas"/>
+        <Filename Value="src\rl_connecteddevice.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="ConnectedDevice"/>
+        <UnitName Value="rl_connecteddevice"/>
       </Unit8>
     </Units>
   </ProjectOptions>

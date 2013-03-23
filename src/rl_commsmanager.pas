@@ -31,7 +31,7 @@ unit rl_commsmanager;
 interface
 
 uses
-  ConnectedDevice, rl_firmata, SdpoSerial,rl_msgevents, Classes, SysUtils;
+  rl_connecteddevice, rl_firmata, SdpoSerial,rl_msgevents, Classes, SysUtils;
 
 type
 
@@ -66,7 +66,7 @@ type
 
       property isConnected: boolean read fConnected;
 
-      property ConnectedDevice: TConnectedDevice read fDevice;
+      property rl_connecteddevice: TConnectedDevice read fDevice;
 
   end;
 

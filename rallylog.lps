@@ -35,7 +35,6 @@
         <Filename Value="src\synchedthreads.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="SynchedThreads"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="9"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -61,7 +60,7 @@
         <EditorIndex Value="7"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="20" Y="6"/>
+        <CursorPos X="1" Y="1"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit4>
@@ -102,18 +101,19 @@
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="165"/>
+        <CursorPos X="1" Y="1"/>
         <UsageCount Value="56"/>
         <Loaded Value="True"/>
       </Unit8>
       <Unit9>
-        <Filename Value="src\connecteddevice.pas"/>
+        <Filename Value="src\rl_connecteddevice.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="ConnectedDevice"/>
+        <UnitName Value="rl_connecteddevice"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="8"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="31"/>
-        <CursorPos X="1" Y="92"/>
+        <TopLine Value="1"/>
+        <CursorPos X="45" Y="6"/>
         <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit9>
@@ -261,7 +261,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="49" Y="316"/>
-        <UsageCount Value="27"/>
+        <UsageCount Value="28"/>
         <Loaded Value="True"/>
       </Unit27>
       <Unit28>

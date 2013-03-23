@@ -9,7 +9,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, pl_excontrols, appwindow, SynchedThreads, rl_commsmanager,
   rl_msgevents, serialdevice,
-rl_firmata, ftd2xx, ConnectedDevice,
+rl_firmata, ftd2xx, rl_connecteddevice,
   pl_luicontrols;
 
 {$R *.res}
