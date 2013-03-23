@@ -23,7 +23,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="appwindow"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -50,7 +49,7 @@
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="35" Y="8"/>
+        <CursorPos X="2" Y="25"/>
         <UsageCount Value="200"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -77,13 +76,14 @@
         <Loaded Value="True"/>
       </Unit5>
       <Unit6>
-        <Filename Value="src\firmata.pas"/>
+        <Filename Value="src\rl_firmata.pas"/>
         <IsPartOfProject Value="True"/>
-        <UnitName Value="firmata"/>
+        <UnitName Value="rl_firmata"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="21" Y="45"/>
+        <CursorPos X="32" Y="6"/>
         <UsageCount Value="222"/>
         <Loaded Value="True"/>
       </Unit6>

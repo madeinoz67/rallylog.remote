@@ -31,7 +31,7 @@ unit rl_commsmanager;
 interface
 
 uses
-  ConnectedDevice, firmata, SdpoSerial,rallylogevents, Classes, SysUtils;
+  ConnectedDevice, rl_firmata, SdpoSerial,rallylogevents, Classes, SysUtils;
 
 type
 
